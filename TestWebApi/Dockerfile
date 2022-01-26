@@ -47,7 +47,8 @@ WORKDIR /app
 # Copy csproj and restore as distinct layers
 #COPY aspnetcore/src/api/api.csproj ./
 COPY ["TestWebApi/TestWebApi.csproj", "TestWebApi/"]
-RUN dotnet restore
+#RUN dotnet restore
+RUN dotnet restore "TestWebApi/TestWebApi.csproj"
 # Copy everything else and build
 #COPY aspnetcore/src/api/ ./
 COPY . .
